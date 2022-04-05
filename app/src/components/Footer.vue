@@ -1,0 +1,76 @@
+<template>
+	<footer class="footer">
+		<div class="footer__title">{{title}}</div>
+		<nav class="footer__navigation">
+			<RouterLink class="footer__navigation-link" :to="{ name: 'about' }">
+				<div class="footer__navigation-about">{{about}}</div> 
+				<div class="footer__navigation-social">{{facebook}} 
+					<img src="/images/arrow.png" alt="arrow-icon" class="footer__navigation-icon"></div> 
+				<div class="footer__navigation-social">{{twitter}} 
+					<img src="/images/arrow.png" alt="arrow-icon" class="footer__navigation-icon"></div> 
+			</RouterLink>
+			<p class="footer__navigation-mail"> {{mail}} </p>
+		</nav>
+	</footer>	
+</template>
+
+
+<script>
+export default {
+	data() {
+		return {
+			title: '@CartaDesign',
+			facebook: 'Facebook',
+			twitter: 'Twitter',
+			mail: 'art@info.com',
+		};
+	},
+}
+</script>
+
+<style>
+	.footer {
+		display: grid;
+		grid-template-columns: var(--grid-column-12);
+		grid-gap: var(--gap-big);
+		padding-bottom: var(--bottom-small);
+		font-size: var(--body);
+		background-color: #fdfcfb;
+	}
+	.footer__title {
+		grid-column: 1 / span 1;
+		color: 276448;
+		padding-left: 10px;
+		padding-top: var(--top-small);
+	}
+	
+	.footer__navigation {
+		grid-column: 8 / span 5;
+		padding-top: var(--top-small);
+	}
+	.footer__navigation-icon {
+		width: 20px;
+	}
+	.footer__navigation-link {
+		text-decoration: none;
+		color: 276448;
+	}
+	
+	.footer__navigation-mail {
+		margin-top: 20px;
+		color: 276448;
+	}
+   /* Medium screen devices (968px and above) */
+    @media screen and (min-width: 968px) {
+        
+		.footer__navigation {
+			grid-column: 10 / span 2;
+		}
+	}
+	
+	@media screen and (max-width: 511px) {
+		.footer * {
+			font-size: var(--caption);
+		}
+	}
+</style>
