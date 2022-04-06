@@ -55,11 +55,13 @@
 		padding: 10px 10px;
 		font-size: 0.7em;
 		margin-bottom: 0.8em;
+		font-weight: bold;
 		}
 	.contact__form-message {
 		border: 1px solid black;
 		padding: 70px 10px;
 		font-size: 0.8em;
+		font-weight: bold;
 		}
 	.contact__form-button {
 		background: #633930;

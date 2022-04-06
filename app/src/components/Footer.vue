@@ -3,10 +3,11 @@
 		<div class="footer__title">{{title}}</div>
 		<nav class="footer__navigation">
 			<RouterLink class="footer__navigation-link" :to="{ name: 'about' }">
-				<div class="footer__navigation-about">{{about}}</div> 
-				<div class="footer__navigation-social">{{facebook}} 
+				<div class="footer__navigation-social">
+					<img class="footer__navigation-link--social" src="/images/flipkart.png" alt="facebook icon"> {{facebook}} 
 					<img src="/images/arrow.png" alt="arrow-icon" class="footer__navigation-icon"></div> 
-				<div class="footer__navigation-social">{{twitter}} 
+				<div class="footer__navigation-social">
+					<img class="footer__navigation-link--social" src="/images/twitter.png" alt="twitter icon"> {{twitter}} 
 					<img src="/images/arrow.png" alt="arrow-icon" class="footer__navigation-icon"></div> 
 			</RouterLink>
 			<p class="footer__navigation-mail"> {{mail}} </p>
@@ -45,7 +46,7 @@ export default {
 	}
 	
 	.footer__navigation {
-		grid-column: 8 / span 5;
+		grid-column: 7 / span 5;
 		padding-top: var(--top-small);
 	}
 	.footer__navigation-icon {
@@ -54,6 +55,9 @@ export default {
 	.footer__navigation-link {
 		text-decoration: none;
 		color: 276448;
+	}
+	.footer__navigation-link--social {
+		width: 20px;
 	}
 	
 	.footer__navigation-mail {
@@ -65,12 +69,6 @@ export default {
         
 		.footer__navigation {
 			grid-column: 10 / span 2;
-		}
-	}
-	
-	@media screen and (max-width: 511px) {
-		.footer * {
-			font-size: var(--caption);
 		}
 	}
 </style>

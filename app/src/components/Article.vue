@@ -7,6 +7,11 @@
 					One early sense of the definition of art is closely related to the older Latin meaning, which roughly translates to "skill" or "craft", as associated with words such as "artisan". English words derived from this meaning include artifact, artificial, artifice, medical arts, 
 					and military arts. However, there are many other colloquial uses of the word, all with some relation to its etymology. 
 				</p> 
+					<br>
+				<p>
+					With a mission to create an online marketplace that is simple, secure, and profitable for artists everywhere, Artmajeur has created the world's first global virtual art gallery with over 10 million visitors. Artmajeur offers you exclusive prices on original artworks by emerging
+					and established international artists, shipping worldwide in 24 to 48h to your doorstep for free. Enjoy our selection of original artworks and high-quality prints that will make perfect gifts or decorate your walls with style!
+				</p>
 			</article>
 	</main>
 </template>
