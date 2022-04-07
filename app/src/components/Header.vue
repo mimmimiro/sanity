@@ -67,8 +67,8 @@
 		transform: rotateZ(360deg);
 	}
 
-	/* Medium screen devices (968px and above) */
-   @media screen and (min-width: 968px) {
+	/* Small and medium screen devices  */
+   @media screen and (max-width: 1024px) {
       .container__header-logo {
           grid-column: 1 / span 2;             
    	}  

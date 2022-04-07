@@ -48,13 +48,13 @@
 		margin-bottom: 120px;
 	}
 	
-	/* Medium screen devices (968px and above) */
-	@media screen and (min-width: 968px)  {
+	/* Small and medium screen devices  */
+   @media screen and (max-width: 1024px) {
 		.article__title {
-			grid-column: 3/ span 8;
+			grid-column: 2/ span 8;
 		}
 		.article__section {
-			grid-column: 2/ span 10;
+			grid-column: 1/ span 11;
 		}
 	}
 </style>

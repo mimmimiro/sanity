@@ -55,7 +55,8 @@
 			grid-column: 3/ span 8;
 		}
 		.about__article {
-			grid-column: 2/ span 11;
+			grid-column: 1/ span 11;
+			margin-left: 20px;
 		}
 	}
 </style>

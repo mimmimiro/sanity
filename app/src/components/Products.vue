@@ -133,4 +133,22 @@
 		margin: 0px;
 		position: absolute;
 	}
+
+	/* Small and medium screen devices  */
+   @media screen and (max-width: 1024px) {
+		.product {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.product__image {
+			width: 35vw;
+			height: 28vh;
+			padding: 10px;
+		}
+		.cart{
+			margin: 0px 45px 0px 873px;
+		}
+		.cart__image {
+			right: 40px;
+		}
+	}
 </style>

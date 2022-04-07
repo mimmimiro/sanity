@@ -64,11 +64,10 @@ export default {
 		margin-top: 20px;
 		color: 276448;
 	}
-   /* Medium screen devices (968px and above) */
-    @media screen and (min-width: 968px) {
-        
+   /* Small and medium screen devices  */
+   @media screen and (max-width: 1024px) {
 		.footer__navigation {
-			grid-column: 10 / span 2;
+			grid-column: 8 / span 4;
 		}
 	}
 </style>
