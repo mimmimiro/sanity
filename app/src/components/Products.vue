@@ -34,7 +34,7 @@
 	});
 	export default {
 		components: {
-			Card
+			Card,
 		},
 		data() {
 			return {
@@ -79,6 +79,7 @@
 				// console.log(product);
 				console.log(this.cart);
     	},
+		 	
 		}
 	}
 </script>

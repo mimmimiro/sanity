@@ -2,8 +2,8 @@
   <main>
     <h1>Your Cart</h1>
     <section class="cart">
-      <!-- <div v-for="product in cart" :key="product._id"> -->
-			<div v-for="(product, index) in cart" :key="index">
+      <div v-for="product in cart" :key="product._id">
+		  <!-- <div v-for="(product, index) in cart" :key="index"> -->
         <h3>{{product.title}}</h3>
         <img :src="product.productImage.asset.url" />
         <div>{{ product.price }}</div>
@@ -19,13 +19,8 @@
 export default {
 	data() {
 		return {
-			
+			cart: []
 		}
 	}
 }
 </script>
-
-
-
-
-
