@@ -32,7 +32,6 @@
 		display: grid;
 		grid-template-columns: var(--grid-column-12);
 		column-gap: var(--gap-big);
-		margin: var(--outside-margin);
 	}
 	.about__title {
 		font-size: var(--heading);
@@ -43,20 +42,20 @@
 	}
 	.about__article {
 		font-size: var(--body);
-		grid-column: 1/ span 12;
+		grid-column: 2/ span 10;
 		margin-top: 60px;
 		margin-bottom: 120px;
 	}
 	.text__section {
 		margin-bottom: var(--bottom-medium);
 	}
-	/* Medium screen devices (968px and above) */
-	@media screen and (min-width: 968px)  {
+	/* Small and medium devices */
+	@media screen and (max-width: 1024px)  {
 		.about__title {
 			grid-column: 3/ span 8;
 		}
 		.about__article {
-			grid-column: 2/ span 9;
+			grid-column: 2/ span 11;
 		}
 	}
 </style>

@@ -6,10 +6,6 @@
 						<figcaption class="slideshow__images-caption">{{ startImage.caption }}</figcaption>
 					</section>
 			</figure>
-		<!-- <div class="slideshow__buttons">
-			<button class="slideshow__buttons-previous"  @click="previous" > Previous</button>
-			<button class="slideshow__buttons-next" @click="next" > Next</button>
-		</div> -->
 	</main>
 
 </template>
@@ -98,6 +94,8 @@
 		margin-left: 250px;
 		color: 276448;
 		font-size: 1.4rem;
+		margin-top: 5px;
+		font-weight: bold;
 	}
 	/* Small and medium screen devices  */
    @media screen and (max-width: 1024px) {
