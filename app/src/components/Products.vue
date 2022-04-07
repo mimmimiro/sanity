@@ -1,16 +1,21 @@
 <template>
 		<main>
+			<div class="cart">{{ cart.length }}
+				<RouterLink :to="{ name: 'cart' }"> 
+					<img class="cart__image" src="/images/cart.png" alt="shopping-cart">
+				</RouterLink>
+			</div>
 			<h1 class="product__header">{{ title }}</h1>
 			<div v-if="loading">waiting</div>
 				<div class="product" v-else>
 					<section class="product__section" v-for="product in products" :key="product._id">
 						<card>
-						<div class="product__title">Title - {{ product.title}}</div>
+						<h3 class="product__title">Title - {{ product.title}}</h3>
 						<img class="product__image" :src="product.productImage.asset.url" alt="product-image"> 
 						<div class="product__category">Category: {{ product.category.type }}</div>
 						<div class="product__description"> {{ product.description }}</div>
 						<div class="product__price">Price ${{ product.price}}</div>
-						<button class="product__button">Add to cart</button>
+						<button class="product__button" @click="addToCart(product)">Add to cart</button>
 						</card>
 					</section>
 			</div>
@@ -37,6 +42,7 @@
 				result: null,
 				title: 'Art shop',
 				products: [],
+				cart: [],
 			}
 		},
 		async created() {
@@ -66,6 +72,14 @@
 			this.loading = false;
 			this.products = this.result;
 		},
+		methods: {
+    		addToCart(product) {
+      		this.cart.push(product);
+				// this.$emit("addToCart", product);
+				// console.log(product);
+				console.log(this.cart);
+    	},
+		}
 	}
 </script>
 
@@ -79,7 +93,11 @@
 	}
 	.product__header {
 		color:#633930;
-		margin: 20px 0px 15px 550px;
+		text-align: center;
+	}
+
+	.product__title {
+		color: #633930;
 	}
 	
 	.product__image {
@@ -101,5 +119,18 @@
 	.product__button:hover {
 		background: #276448;
 		border: solid 1px #276448;
+	}
+	.cart {
+		margin: 15px 0px 0px 1200px;
+		font-size: 1.6rem;
+		background-color: rgb(242, 209, 76);
+		width: 30px;
+		height: 30px;
+		border-radius: 10px;
+	}
+	.cart__image {
+		width: 30px;
+		margin: 0px;
+		position: absolute;
 	}
 </style>
