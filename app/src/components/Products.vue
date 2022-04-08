@@ -1,6 +1,6 @@
 <template>
 		<main>
-			<div class="cart">{{ cart.length }}
+			<div class="product__cart">{{ cart.length }}
 				<RouterLink :to="{ name: 'cart' }"> 
 					<img class="cart__image" src="/images/cart.png" alt="shopping-cart">
 				</RouterLink>
@@ -25,6 +25,7 @@
 <script>
 	import sanityClient from '@sanity/client';
 	import Card from './Card.vue';
+	// import Cart from './Cart.vue';
 
 	const sanity = sanityClient({
 		projectId: 'quzsh0t6',
@@ -35,6 +36,7 @@
 	export default {
 		components: {
 			Card,
+			// Cart
 		},
 		data() {
 			return {
@@ -43,6 +45,7 @@
 				title: 'Art shop',
 				products: [],
 				cart: [],
+				page: 'products'
 			}
 		},
 		async created() {
@@ -121,7 +124,7 @@
 		background: #276448;
 		border: solid 1px #276448;
 	}
-	.cart {
+	.product__cart {
 		margin: 15px 0px 0px 1200px;
 		font-size: 1.6rem;
 		background-color: rgb(242, 209, 76);

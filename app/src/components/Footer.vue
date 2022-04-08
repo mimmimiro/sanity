@@ -46,7 +46,7 @@ export default {
 	}
 	
 	.footer__navigation {
-		grid-column: 7 / span 5;
+		grid-column: 9 / span 3;
 		padding-top: var(--top-small);
 	}
 	.footer__navigation-icon {

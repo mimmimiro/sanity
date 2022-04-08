@@ -9,7 +9,7 @@
         <div>{{ product.price }}</div>
 		  <div class="product__category"> {{ product.category.type }}</div>
 			<div class="product__description"> {{ product.description }}</div>
-        <button @click="removeFromCart(product)">Remove from cart</button>
+        <button class="cart__button" @click="removeFromCart(product)">Remove from cart</button>
       </div>
     </section>
   </main>
@@ -19,8 +19,14 @@
 export default {
 	data() {
 		return {
-			cart: []
+			cart: [],
 		}
-	}
+	} 
 }
 </script>
+
+<style>
+.cart__button {
+	background-color: brown;
+}
+</style>
