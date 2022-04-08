@@ -1,5 +1,5 @@
 import Home from './views/Home.vue';
-import About from './components/About.vue';
+import About from './views/About.vue';
 import Products from './components/Products.vue';
 import Contact from './components/Contact.vue';
 import Cart from './components/Cart.vue';
