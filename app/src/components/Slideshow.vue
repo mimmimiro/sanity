@@ -44,10 +44,10 @@
 		mounted() {
     			this.startSlideshow();
   		},
-		//   the slides glide every 7 seconds with this method
+		//   the slides glide every 6 seconds with this method
 		methods: { 
 			startSlideshow() {
-      		this.timer = setInterval(this.next, 7000);
+      		this.timer = setInterval(this.next, 6000);
     		},
 			next() {
 			   this.currentIndex = this.currentIndex === this.image.length - 1 ? 0 : this.currentIndex + 1;

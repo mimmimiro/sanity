@@ -1,13 +1,13 @@
 <template>
   <main>
-    <h1>Your Cart</h1>
+    <h1 class="cart__header">{{ title }}</h1>
     <section class="cart">
       <div v-for="product in cart" :key="product._id">
         <h3>{{product.title}}</h3>
         <img :src="product.productImage.asset.url" />
         <div>{{ product.price }}</div>
-		  <div class="product__category"> {{ product.category.type }}</div>
-			<div class="product__description"> {{ product.description }}</div>
+		  <div class="cart__category"> {{ product.category.type }}</div>
+			<div class="cart__description"> {{ product.description }}</div>
         <button class="cart__button" @click="removeFromCart(product)">Remove from cart</button>
       </div>
     </section>
@@ -19,6 +19,7 @@ export default {
 	data() {
 		return {
 			cart: [],
+      title: 'Your cart'
 		}
 	},
 	computed: {
@@ -30,7 +31,10 @@ export default {
 </script>
 
 <style>
-.cart__button {
-	background-color: brown;
-}
+
+  .cart__header {
+		color:#633930;
+		text-align: center;
+	}
+
 </style>
