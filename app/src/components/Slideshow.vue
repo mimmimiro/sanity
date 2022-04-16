@@ -6,8 +6,9 @@
 						<figcaption class="slideshow__images-caption">{{ startImage.caption }}</figcaption>
 					</section>
 			</figure>
+			<button class="previous" @click="previous" ><img class="previous__image" src="/images/pointb.png" alt="previous"> </button>
+     		<button class="next" @click="next"><img class="next__image" src="/images/point.png" alt="next"></button>
 	</main>
-
 </template>
 
 <script>
@@ -96,6 +97,30 @@
 		font-size: 1.4rem;
 		margin-top: 5px;
 		font-weight: bold;
+	}
+	.previous, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 55%;
+		width: auto;
+		padding: 10px 14px;
+		font-size: 15px;
+		transition: 0.7s ease;
+		border-radius: 0 4px 4px 0;
+ 	}
+  .next {
+    	right: 475px;
+  }
+
+  .previous {
+    	left: 200;
+ 	}
+
+	.next__image {
+		width: 30px;
+	}
+	.previous__image {
+		width: 30px;
 	}
 	/* Small and medium screen devices  */
    @media screen and (max-width: 1024px) {
