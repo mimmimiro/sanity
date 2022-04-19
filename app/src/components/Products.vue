@@ -1,6 +1,6 @@
 <template>
 		<main>
-			<!-- cart-modal, the cart section appears when clicked -->
+			<!-- cart-modal, the cart section appears when clicked image icon-->
 			<section class="cart">
    			 <div>
 						<button @click="showCart = !showCart">
@@ -9,7 +9,7 @@
 						<span >{{ cart.length }}</span>
      				 <div v-if="showCart" class="cart__dropdown">
 							<h2 class="cart__header">Your cart</h2>
-							<!-- <p v-if="carth.length <= 0">Your cart is empty!</p> -->
+							<p v-if="cart.length <= 0">Your cart is empty!</p>
 						<ul class="cart__dropdown-list">
 							<li
 								v-for="product in cart"
