@@ -25,7 +25,7 @@
    			 </div>
  			</section>
 
-			 <!-- product section - all the products are fetched rom Sanity -->
+			 <!-- product section - all the products are fetched from Sanity -->
 			<h1 class="product__header">{{ title }}</h1>
 			<div v-if="loading">waiting</div>
 				<div class="product" v-else>
@@ -50,7 +50,7 @@
 	const sanity = sanityClient({
 		projectId: 'quzsh0t6',
 		dataset: 'production',
-		apiVersion: '2022-03-30', // dagens prosjekter først opprettet
+		apiVersion: '2022-03-30', // when the project where first created
 		useCdn: false // false for localhost, true for netlify
 	});
 	export default {
