@@ -5,7 +5,7 @@
 		      <input class="contact__form-input" type="email" placeholder="E-mail" v-model="form.email" />
 		      <input class="contact__form-message" type="textarea" placeholder="Message" v-model="form.message" />
             <!-- added a reset button, to clear the form when clicked-->
-		      <button class="contact__form-button" @click="submit_form">Submit</button>
+		      <button class="contact__form-button" @click="submitForm">Submit</button>
 		      <button class="contact__form-button" @click="clear">Clear form</button>
 	  </form>
   </template>
@@ -23,7 +23,7 @@
 			};
 		},
 		methods: {
-			submit_form() {
+			submitForm() {
 				alert(`Thank you, !`);
 			},
 			clear() {

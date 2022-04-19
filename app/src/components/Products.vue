@@ -1,7 +1,7 @@
 <template>
 		<main>
 			<!-- cart-modal, the cart section appears when clicked -->
-			<nav class="cart">
+			<section class="cart">
    			 <div>
 						<button @click="showCart = !showCart">
 						<img class="cart__image" src="/images/cart.png" alt="shopping-cart">
@@ -9,6 +9,7 @@
 						<span >{{ cart.length }}</span>
      				 <div v-if="showCart" class="cart__dropdown">
 							<h2 class="cart__header">Your cart</h2>
+							<!-- <p v-if="carth.length <= 0">Your cart is empty!</p> -->
 						<ul class="cart__dropdown-list">
 							<li
 								v-for="product in cart"
@@ -18,30 +19,33 @@
 								<button class="cart__button" @click="removeFromCart(product)">Remove</button>
 							</li>
 						</ul>
+							<h5 class="cart__total">Total: ${{ totalPrice }} </h5>
+							<button @click="checkout" class="cart__checkout">checkout</button>
       			</div>
    			 </div>
- 			</nav>
+ 			</section>
+
+			 <!-- product section - all the products are fetched rom Sanity -->
 			<h1 class="product__header">{{ title }}</h1>
 			<div v-if="loading">waiting</div>
 				<div class="product" v-else>
 					<section class="product__section" v-for="product in products" :key="product._id">
 						<card>
-						<h3 class="product__title">Title - {{ product.title}}</h3>
-						<img class="product__image" :src="product.productImage.asset.url" :alt="product.title"> 
-						<div class="product__category">Category: {{ product.category.type }}</div>
-						<div class="product__description"> {{ product.description }}</div>
-						<div class="product__price">Price ${{ product.price}}</div>
-						<button class="product__button" @click="addToCart(product)">Add to cart</button>
+							<h3 class="product__title">Title - {{ product.title}}</h3>
+							<img class="product__image" :src="product.productImage.asset.url" :alt="product.title"> 
+							<div class="product__category">Category: {{ product.category.type }}</div>
+							<div class="product__description"> {{ product.description }}</div>
+							<div class="product__price">Price ${{ product.price}}</div>
+							<button class="product__button" @click="addToCart(product)">Add to cart</button>
 						</card>
 					</section>
-			</div>
+				</div>
 		</main>
 </template>
 
 <script>
 	import sanityClient from '@sanity/client';
 	import Card from './Card.vue';
-	// import Cart from './Cart.vue';
 
 	const sanity = sanityClient({
 		projectId: 'quzsh0t6',
@@ -61,7 +65,7 @@
 				title: 'Art shop',
 				products: [],
 				cart: [],
-				showCart: false
+				showCart: false,
 			}
 		},
 		async created() {
@@ -91,6 +95,13 @@
 			this.loading = false;
 			this.products = this.result;
 		},
+		computed: {
+			 totalPrice() {
+              let total = 0;
+              total += this.cart.reduce((left, curent) => left + curent.price, 0);
+               return total;
+         }
+		},
 		methods: {
     		addToCart(product) {
       		this.cart.push(product);
@@ -98,11 +109,13 @@
 				// console.log(product);
 				console.log(this.cart);
     	},
-
 			removeFromCart(product) {
      		 	this.cart.splice(this.cart.indexOf(product), 1);
     		},
-		 	
+			checkout() { 
+			 this.cart = [];
+			 alert(`Thank you, for shopping at our store !`);
+			 }
 		}
 	}
 </script>
@@ -129,7 +142,8 @@
 		height: 30vh;
 	}
 	.product__button,
-	.cart__button {
+	.cart__button,
+	.cart__checkout {
 		background: #633930;
 		border: solid 1px #633930;
 		border-radius: 5px;
@@ -141,7 +155,9 @@
 		margin-top: 0.5em;
 		font-size: 0.8em;
 	}
-	.product__button:hover {
+	.product__button:hover,
+	.cart__button:hover,
+	.cart__checkout:hover {
 		background: #276448;
 		border: solid 1px #276448;
 	}
@@ -152,6 +168,15 @@
 		width: 30px;
 		height: 30px;
 		border-radius: 10px;
+	}
+
+	.cart__header {
+		font-size: 1.8rem;
+	}
+
+	.cart__total {
+		font-size: 1.3rem;
+		padding-top: 10px;
 	}
 	.cart__image {
 		width: 30px;
@@ -166,7 +191,7 @@
       color: #333;
       font-size: 1.3rem;
       overflow: auto;
-      padding: 0 1rem;
+      padding: 15px;
       position: absolute;
       right: 0;
       width: 12rem;
@@ -174,6 +199,7 @@
 	}
    .cart__dropdown-list {
       list-style: none;
+		font-size: 1.2rem;
    }
    
 	/* Small and medium screen devices  */
