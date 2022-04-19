@@ -15,7 +15,7 @@
 								v-for="product in cart"
 								:key="product._id"
 							>
-								{{ product.title }} ${{ product.price}}
+								Item:{{ product.title }} ${{ product.price}}
 								<button class="cart__button" @click="removeFromCart(product)">Remove</button>
 							</li>
 						</ul>
