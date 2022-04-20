@@ -10,15 +10,15 @@
      				 <div v-if="showCart" class="cart__dropdown">
 							<h2 class="cart__header">Your cart</h2>
 							<p v-if="cart.length <= 0">Your cart is empty!</p>
-						<ul class="cart__dropdown-list">
-							<li
-								v-for="product in cart"
-								:key="product._id"
-							>
-								Item:{{ product.title }} ${{ product.price}}
-								<button class="cart__button" @click="removeFromCart(product)">Remove</button>
-							</li>
-						</ul>
+							<ul class="cart__dropdown-list">
+									<li
+										v-for="product in cart"
+										:key="product._id"
+									>
+										Item:{{ product.title }} ${{ product.price}}
+										<button class="cart__button" @click="removeFromCart(product)">Remove</button>
+									</li>
+							</ul>
 							<h5 class="cart__total">Total: ${{ totalPrice }} </h5>
 							<button @click="checkout" class="cart__checkout">checkout</button>
       			</div>
