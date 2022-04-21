@@ -44,8 +44,8 @@
 	.article__section {
 		font-size: var(--body);
 		grid-column: 1/ span 12;
-		margin-top: 20px;
-		margin-bottom: 120px;
+		margin: 20px 20px 100px 20px;
+		text-align: justify;
 	}
 	
 	/* Small and medium screen devices  */

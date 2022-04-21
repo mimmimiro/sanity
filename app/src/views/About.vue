@@ -38,14 +38,16 @@
 		grid-column: 1/ span 12;
 		text-align: center;
 		color: 633930;
-		padding-top: var(--top-small);
+		margin-top: 40px;
 	}
 	.about__article {
 		font-size: var(--body);
 		grid-column: 2/ span 10;
 		margin-top: 60px;
-		margin-bottom: 120px;
+		margin-bottom: 100px;
+		text-align: justify;
 	}
+	
 	.text__section {
 		margin-bottom: var(--bottom-medium);
 	}
