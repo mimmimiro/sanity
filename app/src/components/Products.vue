@@ -7,6 +7,7 @@
 							<img class="cart__image" src="/images/cart.png" alt="shopping-cart">
 						</button>
 						<span >{{ cart.length }}</span>
+						<!-- cart dropdown menu, when opend -->
      				 <div v-if="showCart" class="cart__dropdown">
 							<h2 class="cart__header">Your cart</h2>
 							<p v-if="cart.length <= 0">Your cart is empty!</p>
@@ -105,7 +106,6 @@
 		methods: {
     		addToCart(product) {
       		this.cart.push(product);
-				// this.$emit("addToCart", product);
 				// console.log(product);
 				console.log(this.cart);
     	},

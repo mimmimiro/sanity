@@ -6,6 +6,7 @@
 						<figcaption class="slideshow__images-caption">{{ startImage.caption }}</figcaption>
 					</section>
 			</figure>
+			<!-- slideshow glides based on the timer method, but the images can be switched with the button as well -->
 			<button class="previous" @click="previous" ><img class="previous__image" src="/images/pointb.png" alt="previous"> </button>
      		<button class="next" @click="next"><img class="next__image" src="/images/point.png" alt="next"></button>
 	</main>

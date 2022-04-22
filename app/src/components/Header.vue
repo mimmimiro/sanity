@@ -10,7 +10,6 @@
 			</nav>
 		</header>	
 	</section>
-
 </template>
 
 
@@ -18,8 +17,6 @@
 	export default {
 		data() {
 			return {
-			
-			
 			}
 		},
 	}
