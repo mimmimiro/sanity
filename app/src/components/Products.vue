@@ -52,7 +52,7 @@
 		projectId: 'quzsh0t6',
 		dataset: 'production',
 		apiVersion: '2022-03-30', // when the project where first created
-		useCdn: true // false for localhost, true for netlify
+		useCdn: false // false for localhost, true for netlify
 	});
 	export default {
 		components: {
