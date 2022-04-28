@@ -69,7 +69,7 @@
 				showCart: false,
 			}
 		},
-		// crog query, to fetch information from sanity studio
+		// grog query, to fetch information from sanity studio
 		async created() {
 			const query = `
 			*[_type == $type] | order(title asc) {
