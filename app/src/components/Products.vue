@@ -45,24 +45,28 @@
 </template>
 
 <script>
-	import sanityClient from '@sanity/client';
+   import query from '../groq/product.groq?raw';
+	import viewMixin from '../mixins/viewMixin.js';
+	// import sanityClient from '@sanity/client';
 	import Card from './Card.vue';
 
-	const sanity = sanityClient({
-		projectId: 'quzsh0t6',
-		dataset: 'production',
-		apiVersion: '2022-03-30', // when the project where first created
-		useCdn: false // false for localhost, true for netlify
-	});
+	// const sanity = sanityClient({
+	// 	projectId: 'quzsh0t6',
+	// 	dataset: 'production',
+	// 	apiVersion: '2022-03-30', // when the project where first created
+	// 	useCdn: false // false for localhost, true for netlify
+	// });
 	export default {
+		mixins: [viewMixin],
+
 		components: {
 			Card,
 			// Cart
 		},
 		data() {
 			return {
-				loading: true,
-				result: null,
+				// loading: true,
+				// result: null,
 				title: 'Art shop',
 				products: [],
 				cart: [],
@@ -71,31 +75,34 @@
 		},
 		// grog query, to fetch information from sanity studio
 		async created() {
-			const query = `
-			*[_type == $type] | order(title asc) {
-				_id,
-				title,
-				description,
-				price,
+			await this.sanityFetch(query, {
+				type: 'products' 
+			});
+			// const query = `
+			// *[_type == $type] | order(title asc) {
+			// 	_id,
+			// 	title,
+			// 	description,
+			// 	price,
 						
-				category-> {
-					type
-				},
+			// 	category-> {
+			// 		type
+			// 	},
 				
-				productImage {
-					asset-> {
-					url
-				}
-				}
-			}
-			`
-         const params = {
-				type: 'products'
-			};
+			// 	productImage {
+			// 		asset-> {
+			// 		url
+			// 	}
+			// 	}
+			// }
+			// `
+         // const params = {
+			// 	type: 'products'
+			// };
 
-			this.result = await sanity.fetch(query, params);
-			this.loading = false;
-			this.products = this.result;
+			// this.result = await sanity.fetch(query, params);
+			// this.loading = false;
+			// this.products = this.result;
 		},
 		computed: {
 			 totalPrice() {

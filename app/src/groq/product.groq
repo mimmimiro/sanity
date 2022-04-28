@@ -1,0 +1,16 @@
+*[_type == $type] | order(title asc) {
+				_id,
+				title,
+				description,
+				price,
+						
+				category-> {
+					type
+				},
+				
+				productImage {
+					asset-> {
+					url
+				}
+				}
+			}
