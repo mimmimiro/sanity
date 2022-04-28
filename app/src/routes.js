@@ -2,7 +2,7 @@ import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Products from './components/Products.vue';
 import Contact from './components/Contact.vue';
-import Cart from './components/Cart.vue';
+
 
 export default [
 	{
@@ -17,12 +17,6 @@ export default [
 		component: Products
 	},
 	
-	{
-		name: 'cart',
-		path: '/cart',
-		component: Cart
-	},
-
 	{ 
 		name: 'contact', 
 		path: '/contact', 
