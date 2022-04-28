@@ -43,7 +43,7 @@
 	}
 	.article__section {
 		font-size: var(--body);
-		grid-column: 1/ span 12;
+		grid-column: 2/ span 10;
 		margin: 20px 20px 100px 20px;
 		text-align: justify;
 	}
@@ -54,7 +54,7 @@
 			grid-column: 2/ span 8;
 		}
 		.article__section {
-			grid-column: 1/ span 11;
+			grid-column: 2/ span 10;
 		}
 	}
 </style>
