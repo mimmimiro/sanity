@@ -32,9 +32,9 @@
 				<div class="product" v-else>
 					<section class="product__section" v-for="product in products" :key="product._id">
 						<card>
-							<h3 class="product__title">Title - {{ product.title}}</h3>
+							<h3 class="product__title"> {{ product.title}}</h3>
 							<img class="product__image" :src="product.productImage.asset.url" :alt="product.title"> 
-							<div class="product__category">Category: {{ product.category.type }}</div>
+							<div class="product__category"> {{ product.category.type }}</div>
 							<div class="product__description"> {{ product.description }}</div>
 							<div class="product__price">Price ${{ product.price}}</div>
 							<button class="product__button" @click="addToCart(product)">Add to cart</button>
@@ -47,15 +47,8 @@
 <script>
    import query from '../groq/product.groq?raw';
 	import viewMixin from '../mixins/viewMixin.js';
-	// import sanityClient from '@sanity/client';
 	import Card from './Card.vue';
 
-	// const sanity = sanityClient({
-	// 	projectId: 'quzsh0t6',
-	// 	dataset: 'production',
-	// 	apiVersion: '2022-03-30', // when the project where first created
-	// 	useCdn: false // false for localhost, true for netlify
-	// });
 	export default {
 		mixins: [viewMixin],
 
@@ -65,8 +58,6 @@
 		},
 		data() {
 			return {
-				// loading: true,
-				// result: null,
 				title: 'Art shop',
 				products: [],
 				cart: [],
@@ -78,31 +69,7 @@
 			await this.sanityFetch(query, {
 				type: 'products' 
 			});
-			// const query = `
-			// *[_type == $type] | order(title asc) {
-			// 	_id,
-			// 	title,
-			// 	description,
-			// 	price,
-						
-			// 	category-> {
-			// 		type
-			// 	},
-				
-			// 	productImage {
-			// 		asset-> {
-			// 		url
-			// 	}
-			// 	}
-			// }
-			// `
-         // const params = {
-			// 	type: 'products'
-			// };
-
-			// this.result = await sanity.fetch(query, params);
-			// this.loading = false;
-			// this.products = this.result;
+		
 		},
 		computed: {
 			 totalPrice() {
@@ -148,6 +115,7 @@
 	.product__image {
 		width: 20vw;
 		height: 30vh;
+		margin-bottom: 5px;
 	}
 	.product__button,
 	.cart__button,
@@ -168,6 +136,10 @@
 	.cart__checkout:hover {
 		background: #276448;
 		border: solid 1px #276448;
+	}
+	.product__category,
+	.product__description {
+		margin-bottom: 5px;
 	}
 	.cart {
 		margin: 15px 0px 0px 1200px;
